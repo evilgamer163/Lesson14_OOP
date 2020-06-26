@@ -1,9 +1,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    let left = 0,
-        right = 0,
-        top = 0,
+    let right = 0,
         bottom = 0;
 
 
