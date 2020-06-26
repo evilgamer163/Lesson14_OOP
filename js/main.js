@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    const obj = new DomElement('.block', '100px', '100px', 'red', '20px');
+    const obj = new DomElement('#sel', '100px', '100px', 'red', '20px');
     
     let block = obj.createElem('Hello, OOP...');
-    block = document.querySelector('.block');
+    block = document.querySelector(obj.selector);
     block.style.position = 'absolute';
 
     document.addEventListener('keydown', (e) => {
