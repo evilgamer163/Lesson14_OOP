@@ -11,7 +11,7 @@ const DomElement = function(selector, height, width, bg, fonSize) {
 DomElement.prototype.createElem = function(txt) {
     if(this.selector[0] === '.') {
         const div = document.createElement('div');
-        let newClass = 'block';
+        let newClass = this.selector.split('.')[1];
         div.classList.add(newClass);
         div.style.cssText = `
             height: ${this.height};
@@ -24,8 +24,8 @@ DomElement.prototype.createElem = function(txt) {
 
     } else if(this.selector[0] === '#') {
         const paragraph = document.createElement('p');
-        let newID = 'best';
-        paragraph.classList.add(newID);
+        let newID = this.selector.split('#')[1];
+        paragraph.setAttribute('id', newID);
         paragraph.style.cssText = `
             height: ${this.height};
             width: ${this.width};
@@ -39,6 +39,6 @@ DomElement.prototype.createElem = function(txt) {
 
 
 
-const obj = new DomElement('.block', '100px', '100px', 'red', '20px');
+const obj = new DomElement('.thisblovk', '100px', '100px', 'red', '20px');
 
 obj.createElem('Hello, OOP...');
